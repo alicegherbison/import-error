@@ -1,0 +1,57 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "checkJs": true,
+    "declaration": false,
+    "esModuleInterop": true,
+    "importsNotUsedAsValues": "error",
+    "incremental": true,
+    "isolatedModules": false,
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "ES2019"],
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "paths": {
+      "public": ["public/"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "customMatcher": "\\.scss$"
+        }
+      }
+    ],
+    "pretty": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "target": "ES2019",
+    "rootDirs": ["packages"]
+  },
+  "include": ["packages/**/*", "./**/*.ts", "**/*.tsx", "**/*.mdx"],
+  "exclude": [
+    "node_modules/",
+    "packages/native/VidyoClient-WinVS2017SDK/**/*",
+    "packages/native/build/**/*",
+    "packages/native/rebuild.mjs",
+    ".yarn/"
+  ],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "require": ["tsconfig-paths/register", "ts-node/register"]
+  }
+}

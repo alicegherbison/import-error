@@ -1,0 +1,154 @@
+---
+parser: "@typescript-eslint/parser"
+root: true
+plugins:
+  - "@typescript-eslint"
+  - react-hooks
+  - css-modules
+  - mdx
+env:
+  browser: true
+  worker: true
+  jest: false
+  node: true
+  es6: true
+parserOptions:
+  ecmaVersion: 9
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+  project:
+    - "./tsconfig.json"
+overrides:
+  - files:
+      - "*.ts"
+      - "*.tsx"
+    extends:
+      - eslint:recommended
+      - plugin:@typescript-eslint/recommended
+      - plugin:react/recommended
+      - prettier
+      - plugin:react/jsx-runtime
+      - plugin:mdx/recommended
+    parserOptions:
+      project:
+        - "./tsconfig.json"
+    rules:
+      "@typescript-eslint/explicit-function-return-type": "off"
+      "@typescript-eslint/explicit-member-accessibility": "off"
+      "@typescript-eslint/interface-name-prefix": "off"
+      "@typescript-eslint/consistent-type-assertions": warn
+      "@typescript-eslint/consistent-type-definitions":
+        - error
+        - interface
+      "@typescript-eslint/no-use-before-define": "off"
+      "@typescript-eslint/no-inferrable-types": warn
+      "@typescript-eslint/no-empty-function": warn
+      "@typescript-eslint/ban-ts-comment": warn
+      "@typescript-eslint/no-for-in-array": error
+      "@typescript-eslint/no-non-null-asserted-optional-chain": error
+      "@typescript-eslint/no-unnecessary-boolean-literal-compare": error
+      "@typescript-eslint/no-unnecessary-type-assertion": warn
+      "@typescript-eslint/prefer-includes": warn
+      "@typescript-eslint/prefer-optional-chain": warn
+      "@typescript-eslint/prefer-reduce-type-parameter": warn
+      "@typescript-eslint/prefer-regexp-exec": warn
+      "@typescript-eslint/restrict-plus-operands": error
+      "@typescript-eslint/explicit-module-boundary-types": "off"
+      "@typescript-eslint/restrict-template-expressions":
+        - error
+        - allowNumber: true
+          allowBoolean: false
+          allowAny: false
+          allowNullish: true
+      "@typescript-eslint/no-unused-vars":
+        - error
+        - argsIgnorePattern: "^_"
+      "@typescript-eslint/ban-types":
+        - error
+        - types:
+            object: As good as any
+            "{}":
+              message: Not strict enough
+            String:
+              message: Use string instead
+              fixWith: string
+            Boolean:
+              message: Use boolean instead
+              fixWith: boolean
+      arrow-parens:
+        - warn
+        - as-needed
+      block-scoped-var: error
+      curly:
+        - "off"
+        - multi
+      default-case: warn
+      eqeqeq: warn
+      quotes:
+        - warn
+        - double
+      no-bitwise: error
+      no-console:
+        - warn
+        - allow:
+            - info
+            - warn
+            - error
+      no-debugger: warn
+      no-eval: error
+      no-invalid-this: error
+      no-iterator: error
+      no-new-func: error
+      no-new-wrappers: error
+      no-prototype-builtins: error
+      no-restricted-imports:
+        - error
+        - paths:
+            - name: lodash
+              message: Avoid using lodash alltogether
+            - name: lodash-es
+              message: Avoid using lodash alltogether
+            - name: react-router
+              message: Use react-router-dom
+            - name: react-loadable
+              message: React.lazy + Suspense instead
+            - name: graphql-tag
+              message: Use a graphql file instead
+            - name: underscore
+              message: "No"
+            - name: moment
+              message: Use Luxon instead!!!
+            - name: "@storybook/addons"
+              message: Probably should be react
+            - name: "."
+              message: Precise the file to use
+            - name: ".."
+              message: Precise the file to use
+          patterns:
+            - group:
+                - packages/base/*
+              message: Use root import packages/base instead
+            - group:
+                - packages/extra1/*
+              message: Use root import packages/extra1 instead
+            - group:
+                - packages/extra2/*
+              message: Use root import packages/extra2 instead
+      no-return-assign: error
+      no-shadow: "off"
+      no-useless-return: error
+      prefer-const: warn
+      react-hooks/exhaustive-deps: warn
+      react-hooks/rules-of-hooks: error
+      react/display-name: "off"
+      react/jsx-key: warn
+      react/no-find-dom-node: error
+      react/prop-types: "off"
+      react/react-in-jsx-scope: "off"
+      require-await: warn
+      css-modules/no-unused-class: warn
+      css-modules/no-undef-class: error
+settings:
+  react:
+    version: detect

@@ -1,0 +1,13 @@
+dist/
+node_modules/
+coverage/
+*.scss
+configuration/
+*.generated.*
+*.config.js
+TVidyoClient.d.ts
+public/
+packages/native/build/
+packages/native/include/
+packages/native/VidyoClient-WinVS2017SDK/
+.yarn/
