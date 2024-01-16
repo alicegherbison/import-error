@@ -10,7 +10,6 @@ configuration/local.json
 .webpack
 out/
 yarn-error.log
-.vidyo
 build/
 .pnp/
 .pnp.js

@@ -42,13 +42,7 @@
     "rootDirs": ["packages"]
   },
   "include": ["packages/**/*", "./**/*.ts", "**/*.tsx", "**/*.mdx"],
-  "exclude": [
-    "node_modules/",
-    "packages/native/VidyoClient-WinVS2017SDK/**/*",
-    "packages/native/build/**/*",
-    "packages/native/rebuild.mjs",
-    ".yarn/"
-  ],
+  "exclude": ["node_modules/", ".yarn/"],
   "ts-node": {
     "esm": true,
     "experimentalSpecifierResolution": "node",
